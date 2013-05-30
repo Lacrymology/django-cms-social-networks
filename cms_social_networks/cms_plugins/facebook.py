@@ -3,6 +3,7 @@ from cms.plugin_pool import plugin_pool
 from cms_social_networks import models
 
 class FacebookCommentsPlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookComments
     name = 'Social Facebook Comments Plugin'
     render_template = 'cms_social_networks/facebook/comments.html'
@@ -21,8 +22,9 @@ class FacebookCommentsPlugin(CMSPluginBase):
 plugin_pool.register_plugin(FacebookCommentsPlugin)
 
 class FacebookFacepilePlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookFacepile
-    name = 'Social Facebook Facepile Plugin'
+    name = 'Facebook Facepile Plugin'
     render_template = 'cms_social_networks/facebook/facepile.html'
 
     def render(self, context, instance, placeholder):
@@ -39,8 +41,9 @@ class FacebookFacepilePlugin(CMSPluginBase):
 plugin_pool.register_plugin(FacebookFacepilePlugin)
 
 class FacebookLikeboxPlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookLikebox
-    name = 'Social Facebook Likebox Plugin'
+    name = 'Facebook Likebox Plugin'
     render_template = 'cms_social_networks/facebook/likebox.html'
 
     def render(self, context, instance, placeholder):
@@ -57,8 +60,9 @@ class FacebookLikeboxPlugin(CMSPluginBase):
 plugin_pool.register_plugin(FacebookLikeboxPlugin)
 
 class FacebookLikePlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookLike
-    name = 'Social Facebook Like Button Plugin'
+    name = 'Facebook Like Button Plugin'
     render_template = 'cms_social_networks/facebook/like.html'
 
     def render(self, context, instance, placeholder):
@@ -75,8 +79,9 @@ class FacebookLikePlugin(CMSPluginBase):
 plugin_pool.register_plugin(FacebookLikePlugin)
 
 class FacebookLoginButtonPlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookLoginButton
-    name = 'Social Facebook Login Button Plugin'
+    name = 'Facebook Login Button Plugin'
     render_template = 'cms_social_networks/facebook/loginbutton.html'
 
     def render(self, context, instance, placeholder):
@@ -93,8 +98,9 @@ class FacebookLoginButtonPlugin(CMSPluginBase):
 plugin_pool.register_plugin(FacebookLoginButtonPlugin)
 
 class FacebookLivestreamPlugin(CMSPluginBase):
+    module = "Facebook"
     model = models.FacebookLivestream
-    name = 'Social Facebook Live stream Plugin'
+    name = 'Facebook Live stream Plugin'
     render_template = 'cms_social_networks/facebook/livestream.html'
 
     def render(self, context, instance, placeholder):
