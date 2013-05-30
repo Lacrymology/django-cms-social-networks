@@ -1,27 +1,9 @@
-{% load sekizai_tags %}
+{% include "cms_social_networks/_facebook_scripts.html" %}
 
-{% addtoblock "xmlns" %} xmlns:fb="http://ogp.me/ns/fb#"  {% endaddtoblock %}
-
-{% addtoblock "js" %}
-<div id="fb-root"></div>
-
-<script>(function(d, s, id) {
-  var js, fjs = d.getElementsByTagName(s)[0];
-  if (d.getElementById(id)) {return;}
-  js = d.createElement(s); js.id = id;
-  js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
-  fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
-
-{% endaddtoblock %}
-
-
-<fb:like href="{{ like.pageurl }}"
-             {% if like.width %}  width="{{ like.width }}" {% endif %}
-             {% if like.layout %}  layout="{{ like.layout }}" {% endif %}
-             {% if like.font %}  font="{{ like.font }}" {% endif %}
-             {% if not like.send %}  send="false" {% endif %}
-             {% if not like.show_faces %}  show_faces="false" {% endif %}
-             action="{{ like.action }}"
-             colorscheme="{{ like.color_scheme}}">
-</fb:like>
+<div class="fb-like" data-href="{{ like.pageurl }}"
+     data-send="{{ like.send|lower }}"{% if like.width %}
+     data-width="{{ like.width }}"{% endif %}
+     data-show-faces="{{ like.show_faces|lower }}"
+     data-font="{{ like.font }}"
+     data-colorscheme="{{ like.color_scheme }}"
+     data-action="{{ like.action }}"></div>
