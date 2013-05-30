@@ -4,7 +4,7 @@ version = "0.1.0"
 
 long_description=""
 try:
-    long_description=file('README').read()
+    long_description=file('README.rst').read()
 except Exception:
     pass
 
