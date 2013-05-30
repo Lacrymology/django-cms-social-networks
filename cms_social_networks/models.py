@@ -82,8 +82,8 @@ class FacebookLikebox(CMSPlugin):
 class FacebookLike(CMSPlugin):
     pageurl = models.URLField(_("URL that you like it"))
 
-    width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
-        blank=True, help_text=_("Leave empty for auto scaling"))
+    width = models.PositiveSmallIntegerField(_("Width"), default=None,
+        null=True, blank=True, help_text=_("Leave empty for auto scaling"))
 
     color_scheme = models.CharField(_("Color Scheme"), choices=COLOR_CHOICES,
             default='light', max_length=50)
@@ -95,16 +95,14 @@ class FacebookLike(CMSPlugin):
             default='standard', max_length=50)
 
     font = models.CharField(_("Font"), choices=FONT_CHOICES,
-            default='arial', max_length=50)
+        default='arial', max_length=50)
 
     border_color = models.CharField(_("Color Scheme"), default=None,
             null=True, blank=True, max_length=50)
 
-    show_faces = models.BooleanField(_("Show faces"),
-            default=True)
+    show_faces = models.BooleanField(_("Show faces"), default=True)
 
-    send = models.BooleanField(_("Send"),
-            default=True)
+    send = models.BooleanField(_("Send"), default=True)
 
 
     def __unicode__(self):
