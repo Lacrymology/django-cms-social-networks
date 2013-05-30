@@ -1,0 +1,10 @@
+{% include "cms_social_networks/facebook/_header.html" %}
+
+<div class="fb-like-box" data-href="{{ likebox.pageurl }}"{% if likebox.width %}
+     data-width="{{ likebox.width }}"{% endif %}{% if likebox.height %}
+     data-height="{{ likebox.height }}"{% endif %}
+     data-show-faces="{{ likebox.show_faces|lower }}"
+     data-stream="{{ likebox.stream|lower }}"
+     data-show-border="{{ likebox.border|lower }}"
+     data-colorscheme="{{ likebox.color_scheme }}"
+     data-header="{{ likebox.header|lower }}"></div>

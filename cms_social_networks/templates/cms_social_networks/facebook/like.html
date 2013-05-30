@@ -1,0 +1,9 @@
+{% include "cms_social_networks/facebook/_header.html" %}
+
+<div class="fb-like" data-href="{{ like.pageurl }}"
+     data-send="{{ like.send|lower }}"{% if like.width %}
+     data-width="{{ like.width }}"{% endif %}
+     data-show-faces="{{ like.show_faces|lower }}"
+     data-font="{{ like.font }}"
+     data-colorscheme="{{ like.color_scheme }}"
+     data-action="{{ like.action }}"></div>

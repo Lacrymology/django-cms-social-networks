@@ -5,7 +5,7 @@ from cms_social_networks import models
 class FacebookCommentsPlugin(CMSPluginBase):
     model = models.FacebookComments
     name = 'Social Facebook Comments Plugin'
-    render_template = 'cms_social_networks/comments.html'
+    render_template = 'cms_social_networks/facebook/comments.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
@@ -23,7 +23,7 @@ plugin_pool.register_plugin(FacebookCommentsPlugin)
 class FacebookFacepilePlugin(CMSPluginBase):
     model = models.FacebookFacepile
     name = 'Social Facebook Facepile Plugin'
-    render_template = 'cms_social_networks/facepile.html'
+    render_template = 'cms_social_networks/facebook/facepile.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
@@ -41,7 +41,7 @@ plugin_pool.register_plugin(FacebookFacepilePlugin)
 class FacebookLikeboxPlugin(CMSPluginBase):
     model = models.FacebookLikebox
     name = 'Social Facebook Likebox Plugin'
-    render_template = 'cms_social_networks/likebox.html'
+    render_template = 'cms_social_networks/facebook/likebox.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
@@ -59,7 +59,7 @@ plugin_pool.register_plugin(FacebookLikeboxPlugin)
 class FacebookLikePlugin(CMSPluginBase):
     model = models.FacebookLike
     name = 'Social Facebook Like Button Plugin'
-    render_template = 'cms_social_networks/like.html'
+    render_template = 'cms_social_networks/facebook/like.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
@@ -77,7 +77,7 @@ plugin_pool.register_plugin(FacebookLikePlugin)
 class FacebookLoginButtonPlugin(CMSPluginBase):
     model = models.FacebookLoginButton
     name = 'Social Facebook Login Button Plugin'
-    render_template = 'cms_social_networks/loginbutton.html'
+    render_template = 'cms_social_networks/facebook/loginbutton.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
@@ -95,7 +95,7 @@ plugin_pool.register_plugin(FacebookLoginButtonPlugin)
 class FacebookLivestreamPlugin(CMSPluginBase):
     model = models.FacebookLivestream
     name = 'Social Facebook Live stream Plugin'
-    render_template = 'cms_social_networks/livestream.html'
+    render_template = 'cms_social_networks/facebook/livestream.html'
 
     def render(self, context, instance, placeholder):
         context.update({'instance': instance, 'name': self.name})
