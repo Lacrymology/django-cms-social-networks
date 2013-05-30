@@ -56,15 +56,15 @@ class FacebookFacepile(CMSPlugin):
 class FacebookLikebox(CMSPlugin):
     pageurl = models.URLField(_("URL that you like it"))
 
-    width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
-        blank=True, help_text=_("Leave empty for auto scaling"))
-    height = models.PositiveSmallIntegerField(_("Height"), default=None, null=True,
-        blank=True, help_text=_("Leave empty for auto scaling"))
+    width = models.PositiveSmallIntegerField(_("Width"), default=None,
+        null=True, blank=True, help_text=_("Leave empty for auto scaling"))
+    height = models.PositiveSmallIntegerField(_("Height"), default=None,
+        null=True, blank=True, help_text=_("Leave empty for auto scaling"))
 
-    color_scheme = models.CharField(_("Color Scheme"), choices=COLOR_CHOICES, default='light', max_length=50)
+    color_scheme = models.CharField(_("Color Scheme"), choices=COLOR_CHOICES,
+        default='light', max_length=10)
 
-    border_color = models.CharField(_("Color Scheme"), default=None,
-            null=True, blank=True, max_length=50)
+    border = models.BooleanField(_("Show border"), default=True)
 
     show_faces = models.BooleanField(_("Show faces"),
             default=True)
