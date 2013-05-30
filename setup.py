@@ -24,7 +24,7 @@ setup(
     download_url= 'https://github.com/psaavedra/django-cms-social-networks/zipball/master',
     packages = find_packages(),
     package_data={
-        'cms_social_facebook': [
+        'cms_social_networks': [
             'templates/*/*.html',
             'static/*/css/*.css',
             'static/*/images/*',

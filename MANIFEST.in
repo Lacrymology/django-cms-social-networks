@@ -1,4 +1,4 @@
 include README.rst
 include CHANGELOG
-recursive-include cms_social_facebook/templates *
-recursive-include cms_social_facebook/static *
+recursive-include cms_social_networks/templates *
+recursive-include cms_social_networks/static *
