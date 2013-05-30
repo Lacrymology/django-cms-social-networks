@@ -47,7 +47,7 @@ class FacebookFacepile(CMSPlugin):
     max_rows = models.PositiveSmallIntegerField(_("Max rows"),
         default=1)
 
-    action = models.CharField(_("Actions separate by commas"),
+    action = models.CharField(_("Actions separate by commas"), max_length=128,
         default=None, null=True, blank=True)
 
     def __unicode__(self):
@@ -111,7 +111,7 @@ class FacebookLike(CMSPlugin):
         return "Like (%s)" % (self.pageurl)
 
 class FacebookLoginButton(CMSPlugin):
-    appId = models.CharField(_("App ID"))
+    appId = models.CharField(_("App ID"), max_length=128)
 
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
         blank=True, help_text=_("Leave empty for auto scaling"))
@@ -126,9 +126,9 @@ class FacebookLoginButton(CMSPlugin):
         return "Facebook Login Button (%s)" % (self.appId)
 
 class FacebookLivestream(CMSPlugin):
-    appId = models.CharField(_("App ID"))
+    appId = models.CharField(_("App ID"), max_length=128)
 
-    event_app_id = models.CharField(_("Event App Id"),
+    event_app_id = models.CharField(_("Event App Id"), max_length=128,
             help_text=_("Your Facebook application ID or API key")
             )
 
@@ -139,7 +139,6 @@ class FacebookLivestream(CMSPlugin):
 
     always_post_to_friends =models.BooleanField(_("Always_post to friends"),
             blank=True,
-            null=True,
             default=None,
             help_text=_('''If set, all user posts will always go to their
 profile. This option should only be used when users' posts
@@ -148,7 +147,6 @@ event.''')
             )
     xid = models.BooleanField(_("XID"),
             blank=True,
-            null=True,
             default=None,
             help_text=_('''If you have multiple live stream boxes on the
 same page, specify a unique `xid` for each.''')
