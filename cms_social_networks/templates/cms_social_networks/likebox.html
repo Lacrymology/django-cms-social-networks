@@ -1,7 +1,5 @@
 {% load sekizai_tags %}
 
-{% addtoblock "xmlns" %} xmlns:fb="http://ogp.me/ns/fb#"  {% endaddtoblock %}
-
 {% addtoblock "js" %}
 <div id="fb-root"></div>
 
@@ -12,16 +10,13 @@
   js.src = "//connect.facebook.net/es_ES/all.js#xfbml=1";
   fjs.parentNode.insertBefore(js, fjs);
 }(document, 'script', 'facebook-jssdk'));</script>
-
 {% endaddtoblock %}
 
-
-<fb:likebox href="{{ likebox.pageurl }}"
-             {% if likebox.width %}  width="{{ likebox.width}}" {% endif %}
-             {% if likebox.height %}  height="{{ likebox.height}}" {% endif %}
-             {% if not likebox.stream %}  stream="false" {% endif %}
-             {% if not likebox.show_faces %}  show_faces="false" {% endif %}
-             {% if not likebox.header %}  header="false" {% endif %} 
-             {% if likebox.border_color %}  stream="{{ likebox.border_color}}" {% endif %}
-             colorscheme="{{ likebox.color_scheme}}">
-</fb:likebox>
+<div class="fb-like-box" data-href="{{ likebox.pageurl }}"{% if likebox.width %}
+     data-width="{{ likebox.width }}"{% endif %}{% if likebox.height %}
+     data-height="{{ likebox.height }}"{% endif %}
+     data-show-faces="{{ likebox.show_faces }}"
+     data-stream="{{ likebox.stream }}"
+     data-show-border="{{ likebox.border }}"
+     data-colorscheme="{{ likebox.color_scheme }}"
+     data-header="{{ likebox.header }}"></div>
