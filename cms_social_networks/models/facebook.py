@@ -38,6 +38,9 @@ class FacebookComments(CMSPlugin):
     def __unicode__(self):
         return "Comments (%s)" % (self.pageurl)
 
+    class Meta:
+        app_label = 'cms_social_networks'
+
 class FacebookFacepile(CMSPlugin):
     pageurl = models.URLField(_("URL"))
     width = models.PositiveSmallIntegerField(_("Width"), default=None, null=True,
@@ -52,6 +55,9 @@ class FacebookFacepile(CMSPlugin):
 
     def __unicode__(self):
         return "Facepile (%s)" % (self.pageurl)
+
+    class Meta:
+        app_label = 'cms_social_networks'
 
 class FacebookLikebox(CMSPlugin):
     pageurl = models.URLField(_("URL that you like it"))
@@ -78,6 +84,8 @@ class FacebookLikebox(CMSPlugin):
     def __unicode__(self):
         return "Likebox (%s)" % (self.pageurl)
 
+    class Meta:
+        app_label = 'cms_social_networks'
 
 class FacebookLike(CMSPlugin):
     pageurl = models.URLField(_("URL that you like it"))
@@ -108,6 +116,9 @@ class FacebookLike(CMSPlugin):
     def __unicode__(self):
         return "Like (%s)" % (self.pageurl)
 
+    class Meta:
+        app_label = 'cms_social_networks'
+
 class FacebookLoginButton(CMSPlugin):
     appId = models.CharField(_("App ID"), max_length=128)
 
@@ -122,6 +133,9 @@ class FacebookLoginButton(CMSPlugin):
 
     def __unicode__(self):
         return "Facebook Login Button (%s)" % (self.appId)
+
+    class Meta:
+        app_label = 'cms_social_networks'
 
 class FacebookLivestream(CMSPlugin):
     appId = models.CharField(_("App ID"), max_length=128)
@@ -158,8 +172,8 @@ click on your app name on a status (if not specified, your
 Connect URL is used).''')
             )
 
-
     def __unicode__(self):
         return "Facebook Live stream (%s)" % (self.appId)
 
-
+    class Meta:
+        app_label = 'cms_social_networks'
