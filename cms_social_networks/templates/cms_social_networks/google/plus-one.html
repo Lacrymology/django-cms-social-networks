@@ -1,0 +1,18 @@
+{% load sekizai_tags %}
+{% addtoblock "body_bottom" %}
+<script type="text/javascript">
+  (function() {
+    var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+    po.src = 'https://apis.google.com/js/plusone.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+  })();
+</script>
+{% endaddtoblock %}
+
+<div class="g-plusone"{% if plusone.url %}
+    href="{{ plusone.url }}"{% endif %}
+     data-size="{{ plusone.size }}"
+     data-annotation="{{ plusone.annotation }}"{% if plusone.width %}
+     data-width="{{ plusone.width }}"{% endif %}
+     data-align="{{ plusone.align }}"{% if plusone.expandTo %}
+     data-expandTo="{{ plusone.expandTo }}"{% endif %}></div>
