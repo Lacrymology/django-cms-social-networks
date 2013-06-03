@@ -5,7 +5,7 @@ from cms_social_networks import models
 class FacebookCommentsPlugin(CMSPluginBase):
     module = "Facebook"
     model = models.FacebookComments
-    name = 'Social Facebook Comments Plugin'
+    name = 'Facebook Comments Plugin'
     render_template = 'cms_social_networks/facebook/comments.html'
 
     def render(self, context, instance, placeholder):
