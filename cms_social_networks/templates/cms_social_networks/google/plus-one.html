@@ -10,7 +10,7 @@
 {% endaddtoblock %}
 
 <div class="g-plusone"{% if plusone.url %}
-    href="{{ plusone.url }}"{% endif %}
+     data-href="{{ plusone.url }}"{% endif %}
      data-size="{{ plusone.size }}"
      data-annotation="{{ plusone.annotation }}"{% if plusone.width %}
      data-width="{{ plusone.width }}"{% endif %}
