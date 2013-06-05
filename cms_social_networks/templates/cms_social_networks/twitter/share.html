@@ -1,0 +1,25 @@
+{% load sekizai_tags i18n %}
+{% addtoblock "body_bottom" %}
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (!d.getElementById(id)) {
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, "script", "twitter-wjs");</script>
+{% endaddtoblock %}
+
+<a href="https://twitter.com/share{% if twitshare.is_hashtag %}?button_hashtag={{ twitshare.detail }}{% elif twitshare.is_mention %}?screen_name={{ twitshare.detail }}{% endif %}"
+   class="{{ twitshare.type }}"
+   data-lang="{{ LANGUAGE_CODE }}"
+   data-text="{% blocktrans with text=twitshare.tweet_text %}{{ text }}{% endblocktrans %}"{% if twitshare.url %}
+   data-url="{{ twitshare.url }}"{% endif %}{% if twitshare.via %}
+   data-via="{{ twitshare.via }}"{% endif %}{% if twitshare.related %}
+   data-related="{{ twitshare.related }}"{% endif %}
+   data-count="{{ twitshare.count }}"{% if twitshare.count_url %}
+   data-counturl="{{ twitshare.count_url }}"{% endif %}{% if twitshare.hashtags %}
+   data-hashtags="{{ twitshare.hashtags }}"{% endif %}
+   data-size="{{ twitshare.size }}"{% if not twitshare.tailor %}
+   data-dnt="true"{% endif %}></a>
